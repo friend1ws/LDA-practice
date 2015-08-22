@@ -1,0 +1,25 @@
+#! /usr/bin/env python
+
+from run import *
+import argparse
+
+parser = argparse.ArgumentParser(prog = "lda-python")
+
+parser.add_argument("--version", action = "version", version = "lda-python-0.1.0")
+
+parser.add_argument("bow_file", metavar = "bow.txt", type = str,
+                          help = "the path to the bug of word file")
+
+parser.add_argument("vocab_file", metavar = "vocab.txt", type = str,
+                          help = "the path to the vocabulary file")
+
+parser.add_argument("K", metavar = "K", type = int,
+                          help = "the number of topics")
+
+parser.add_argument("iter_num", metavar = "iter_num", type = int,
+                          help = "the number of iteration")
+
+args = parser.parse_args()
+
+main(args)
+
